@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text editor</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+    <!-- Buttons panels start -->
+    <div class="row buttons-panel buttons-panel_style_default">
+        <div class="col l2 offset-l1">
+            <button class="waves-effect waves-light btn-large edit-button buttons-panel__button" name="edit">Edit</button>
+        </div>
+        <div class="col l2">
+            <button class="waves-effect waves-light btn-large style-button buttons-panel__button" name="style">Style</button>
+        </div>
+        <div class="col l2">
+            <button class="waves-effect waves-light btn-large save-button buttons-panel__button" name="save">Save</button>
+        </div>
+        <div class="col l2">
+            <button class="waves-effect waves-light btn-large add-button buttons-panel__button" name="add">Add</button>
+        </div>
+        <div class="col l2">
+            <button class="waves-effect waves-light btn-large block-button buttons-panel__button" name="block">Block</button>
+        </div>
+    </div>
+    <!-- Buttons panels end -->
+    <!-- Font editing panel start -->
+    <div class="row font-editing-panel valign-wrapper grey lighten-1 teal-text text-lighten-1">
+        <!-- Font size-align input panel start -->
+        <div class="col l4 font-size-align-panel">
+            <div class="row font-size-panel-align__size-label-wrapper center-align">
+                <span class="font-size-panel-align__size-label">Font Size</span>
+            </div>
+            <div class="row font-size-panel-align__size-inputes">
+                <input name="font-size-value" type="radio" value="12px" id="font-size-12">
+                <label for="font-size-12" class="white-text">12 px</label>
+                <input name="font-size-value" type="radio" value="14px" id="font-size-14">
+                <label for="font-size-14" class="white-text">14 px</label>
+                <input name="font-size-value" type="radio" value="16px" id="font-size-16">
+                <label for="font-size-16" class="white-text">16 px</label>
+                <input name="font-size-value" type="radio" value="18px" id="font-size-18">
+                <label for="font-size-18" class="white-text">18 px</label>
+                <input name="font-size-value" type="radio" value="20px" id="font-size-20">
+                <label for="font-size-20" class="white-text">20 px</label>
+            </div>
+            <div class="row font-size-panel-align__align-label-wrapper center-align">
+                <span class="font-size-panel-align__align-label">Text align</span>
+            </div>
+            <div class="row font-size-panel-align__align-inputes center-align">
+                <input name="font-align-value" type="radio" value="left" id="left-align">
+                <label for="left-align" class="white-text">Left</label>
+                <input name="font-align-value" type="radio" value="center" id="center-align">
+                <label for="center-align" class="white-text">Center</label>
+                <input name="font-align-value" type="radio" value="right" id="right-align">
+                <label for="right-align" class="white-text">Right</label>
+            </div>
+        </div>
+        <!-- Font size-align input panel end -->
+        <!-- Font family select panel start  -->
+        <div class="col l2 font-family-panel">
+            <div class="row input-field left">
+                <span class="col l12 font-family-panel__family-label center-align">Font Family</span>
+                <select class="col l12 font-family-panel__select-list white-text">
+                    <option class="font-family-panel__option-item" value="Times New Roman">Time New Roman</option>
+                    <option class="font-family-panel__option-item" value="Arial">Arial</option>
+                    <option class="font-family-panel__option-item" value="Tahoma">Tahoma</option>
+                    <option class="font-family-panel__option-item" value="Veranda">Veranda</option>
+                </select>
+            </div>
+        </div>
+        <!-- Font family select panel end -->
+        <!-- Font color select panel start -->
+        <div class="col l2 font-color-panel">
+            <div class="row input-field left">
+                <span class="col l12 font-color-panel__color-label center-align">Font Color</span>
+                <select class="col l12 icons font-color-panel__select-list white-text">
+                    <option value="black" data-icon="img/black.svg" class="left circle font-color-panel__option-item">Black</option>
+                    <option value="brown" data-icon="img/brown.svg" class="left circle font-color-panel__option-item">Brown</option>
+                    <option value="blue" data-icon="img/blue.svg" class="left circle font-color-panel__option-item">Blue</option>
+                    <option value="green" data-icon="img/green.svg" class="left circle font-color-panel__option-item">Green</option>
+                    <option value="yellow" data-icon="img/yellow.svg" class="left circle font-color-panel__option-item">Yellow</option>
+                    <option value="orange" data-icon="img/orange.svg" class="left circle font-color-panel__option-item">Orange</option>
+                    <option value="red" data-icon="img/red.svg" class="left circle font-color-panel__option">Red</option>
+                    <option value="purple" data-icon="img/purple.svg" class="left circle font-color-panel__option-item">Purple</option>
+                    <option value="grey" data-icon="img/grey.svg" class="left circle font-color-panel__option-item">Gray</option>
+                    <option value="white" data-icon="img/white.svg" class="left circle font-color-panel__option-item">White </option>
+                </select>
+            </div>
+        </div>
+        <!-- Font color select panel end -->
+        <!-- Background select panel start -->
+        <div class="col l2 background-panel">
+            <div class="row">
+                <button class="col l12 waves-effect waves-light btn background-panel__button">
+                    <span class="background-panel__button-name">Switch Background</span>
+                </button>
+            </div>
+            <div class="row">
+                <div class="col l12 input-field left background-panel__color-panel">
+                    <select class="icons background-panel__color-select-list white-text">
+                        <option value="black" data-icon="img/black.svg" class="left circle">Black</option>
+                        <option value="brown" data-icon="img/brown.svg" class="left circle">Brown</option>
+                        <option value="blue" data-icon="img/blue.svg" class="left circle">Blue</option>
+                        <option value="green" data-icon="img/green.svg" class="left circle">Green</option>
+                        <option value="yellow" data-icon="img/yellow.svg" class="left circle">Yellow</option>
+                        <option value="orange" data-icon="img/orange.svg" class="left circle">Orange</option>
+                        <option value="red" data-icon="img/red.svg" class="left circle">Red</option>
+                        <option value="purple" data-icon="img/purple.svg" class="left circle">Purple</option>
+                        <option value="grey" data-icon="img/grey.svg" class="left circle">Gray</option>
+                        <option value="white" data-icon="img/white.svg" class="left circle">White</option>
+                    </select>
+                </div>
+                <div class="col l12 input-field left background-panel__image-panel">
+                    <select class="icons background-panel__image-select-list white-text">
+                        <option value="url('img/1.jpg')" data-icon="img/1.jpg" class="left circle">Orange Wall</option>
+                        <option value="url('img/2.jpg')" data-icon="img/2.jpg" class="left circle">Silver Lines</option>
+                        <option value="url('img/3.jpg')" data-icon="img/3.jpg" class="left circle">Dark Bublles</option>
+                        <option value="url('img/4.jpg')" data-icon="img/4.jpg" class="left circle">Dark Web</option>
+                        <option value="url('img/5.jpg')" data-icon="img/5.jpg" class="left circle">Relief Triangl</option>
+                        <option value="url('img/6.jpg')" data-icon="img/6.jpg" class="left circle">Space Light</option>
+                        <option value="url('img/7.jpg')" data-icon="img/7.jpg" class="left circle">Space Lines</option>
+                        <option value="url('img/8.png')" data-icon="img/8.png" class="left circle">Figure</option>
+                        <option value="url('img/9.jpg')" data-icon="img/9.jpg" class="left circle">Light Bubbl</option>
+                    </select>
+                    <input type="file" name="loadImage" class="col l12 background-panel__load-input">
+                </div>
+            </div>
+        </div>
+        <!-- Background select panel end -->
+        <!-- Toggle input for bold, italic and underline font start -->
+        <div class="col l2">
+            <div class="row switch bold-text-toogle center-align">
+                <label class="bold-text-toogle__label white-text">
+                Normal
+                <input class="bold-text-toogle__input" type="checkbox" value="bold">
+                <span class="lever"></span>
+                <span class="teal-text text-lighten-1 bold-text-toogle__label">Bold</span>
+                </label>
+            </div>
+            <div class="row switch italic-text-toogle center-align">
+                <label class="italic-text-toogle__label white-text">
+                Normal
+                <input class="italic-text-toogle__input" type="checkbox" value="italic">
+                <span class="lever"></span>
+                <span class="teal-text text-lighten-1 italic-text-toogle__label">Italic</span>
+                </label>
+            </div>
+            <div class="row switch underline-text-toogle center-align">
+                <label class="underline-text-toogle__label white-text">
+                None
+                <input class="underline-text-toogle__input" type="checkbox" value="underline">
+                <span class="lever"></span>
+                <span class="teal-text text-lighten-1 underline-text-toogle__label">Underline</span>
+                </label>
+            </div>
+        </div>
+        <!-- Toggle input for bold, italic and underline font end -->
+    </div>
+    <!-- Font editing panel end -->
+    <!-- Text editing area start -->
+    <div class="row text-editing-panel">
+        <div class="col l12 text-editing-panel__editing-area-wrapper">
+            <div class="input-field col l12">
+                <textarea id="text-editing-area" class="materialize-textarea"></textarea>
+                <label for="text-editing-area" class="text-editing-area-label ">Text</label>
+            </div>
+        </div>        
+    </div>
+    <!-- Text editing area end -->
+    <!-- Showing panel start -->
+    <div class="row showing-text-panel">
+        <div class="col l12 showing-text-panel__show-container">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </div>
+    </div>
+    <!-- Showing panel end -->
+    <!-- Adding panel start -->
+    <div class="row table-list-creating-panel">
+        <div class="col l12">
+            <!-- Table or List adding control panel start  -->
+            <div class="col l12 adding-panel-control center-align">
+                <input name="adding-panel-radio" type="radio" value=".table-adding-panel" id="add-table" checked>
+                <label for="add-table" class="teal-text text-lighten-2">Table</label>
+                <input name="adding-panel-radio" type="radio" value=".list-adding-panel" id="add-list">
+                <label for="add-list" class="teal-text text-lighten-2">List</label>
+            </div>
+            <!-- Table or List adding control panel end  -->
+            <!-- Table adding content panel start  -->
+            <form class="table-adding-panel table-list-add-panel">
+                <!-- Amount of rows start -->
+                <div class="input-field row-amount-wrapper">
+                    <input placeholder="5" id="row-amount" type="text" data-validate>
+                    <label for="row-amount">Amount of Rows</label>
+                </div>
+                <!-- Amount of rows end -->
+                <!-- Amount of columns start -->
+                <div class="input-field column-amount-wrapper">
+                    <input placeholder="4" id="column-amount" type="text" data-validate>
+                    <label for="column-amount">Amount of Columns</label>
+                </div>
+                <!-- Amount of columns end -->
+                <!-- Table style text label start -->
+                <h5 class="table-style-text center-align teal-text text-lighten-2">
+                    Table style
+                </h5>
+                <!-- Table style text label end -->
+                <!-- Table cell width start -->
+                <div class="input-field table-cell-width-wrapper">
+                    <input placeholder="8" id="table-cell-width" type="text" data-validate>
+                    <label for="table-cell-width">Table cell Width</label>
+                </div>
+                <!-- Table cell width end -->
+                <!-- Table cell height start -->
+                <div class="input-field table-cell-height-wrapper">
+                    <input placeholder="10" id="table-cell-height" type="text" data-validate>
+                    <label for="table-cell-height">Table cell Height</label>
+                </div>
+                <!-- Table cell height end -->
+                <!-- Table border-line width start -->
+                <div class="input-field table-border-line-widht-wrapper">
+                    <input placeholder="2" id="table-border-line-widht" type="text" data-validate>
+                    <label for="table-border-line-widht">Table line Width</label>
+                </div>
+                <!-- Table border-line width end -->
+                <!-- Table cellspacing start -->
+                <div class="input-field table-cellspacing-wrapper">
+                    <input placeholder="1" id="table-cellspacing" type="text" data-validate>
+                    <label for="table-cellspacing">Table Cellspacing</label>
+                </div>
+                <!-- Table cellspacing end -->
+                <!-- Table border-line type start -->
+                <div class="col l12 input-field left table-line-type-wrapper">
+                    <span class="col l12 table-line-type__text-label center-align">Table line type</span>
+                    <select class="table-line-type__select-list white-text" data-reset-item="table">
+                        <option value="solid" class="table-line-type__option-item">Solid</option>
+                        <option value="dotted" class="table-line-type__option-item">Dotted</option>
+                        <option value="dashed" class="table-line-type__option-item">Dashed</option>
+                        <option value="double" class="table-line-type__option-item">Double</option>
+                    </select>
+                </div>
+                <!-- Table border-line type end -->
+                <!-- Table border-line color start -->
+                <div class="col l12 input-field left table-line-color-wrapper">
+                    <span class="col l12 table-line-color-wrapper-label center-align">Table line color</span>
+                    <select class="col l12 icons table-line-color__select-list white-text" data-reset-item="table">
+                        <option value="black" data-icon="img/black.svg" class="left circle table-line-color__oprion-item">Black</option>
+                        <option value="brown" data-icon="img/brown.svg" class="left circle table-line-color__oprion-item">Brown</option>
+                        <option value="blue" data-icon="img/blue.svg" class="left circle table-line-color__oprion-item">Blue</option>
+                        <option value="green" data-icon="img/green.svg" class="left circle table-line-color__oprion-item">Green</option>
+                        <option value="yellow" data-icon="img/yellow.svg" class="left circle table-line-color__oprion-item">Yellow</option>
+                        <option value="orange" data-icon="img/orange.svg" class="left circle table-line-color__oprion-item">Orange</option>
+                        <option value="red" data-icon="img/red.svg" class="left circle table-line-color__oprion-item">Red</option>
+                        <option value="purple" data-icon="img/purple.svg" class="left circle table-line-color__oprion-item">Purple</option>
+                        <option value="grey" data-icon="img/grey.svg" class="left circle table-line-color__oprion-item">Gray</option>
+                        <option value="white" data-icon="img/white.svg" class="left circle table-line-color__oprion-item">White </option>
+                    </select>
+                </div>
+                <!-- Table border-line color start -->
+                <!-- Create and reset table button start -->
+                <div class="row">
+                        <button type="button" class="col l5 waves-effect waves-light btn-large create-table-btn" name="create-table">Create a table</button>
+                        <button type="reset" class="col l5 offset-l2 waves-effect waves-light btn-large reset-table-btn" name="reset-table" data-reset="table">Reset Parameters</button>
+                </div>
+                <!-- Create and reser table button end -->
+            </form>
+            <!-- Table adding content panel end  -->
+            <!-- List adding content panel start -->
+            <div class="list-adding-panel table-list-add-panel">
+                <!-- Choose list type panel start  -->
+                <div class="choose-list-style center-align">
+                    <input name="choose-list-style-radio" type="radio" value=".unordered-list-style" id="ul-list-style">
+                    <label for="ul-list-style" class="teal-text text-lighten-2">Unordered list</label>
+                    <input name="choose-list-style-radio" type="radio" value=".ordered-list-style" id="ol-list-style">
+                    <label for="ol-list-style" class="teal-text text-lighten-2">Ordered list</label>
+                </div>
+                <!-- Choose list type panel end  -->
+                <form class="list-adding-form">
+                    <!-- Unordered list style panel start -->
+                    <div class="col l12 input-field left list-style-wrapper unordered-list-style">
+                        <span class="col l12 list-style__text-label center-align">Unordered list style</span>
+                        <select class="unordered-list-style__select-list white-text" data-reset-item="list">
+                            <option value="circle" class="unordered-list-style__option-item">Circle</option>
+                            <option value="disc" class="unordered-list-style__option-item">Disc</option>
+                            <option value="square" class="unordered-list-style__option-item">Square</option>
+                        </select>
+                    </div>
+                    <!-- Unordered list style panel end --> 
+                    <!-- Ordered list style panel start -->
+                    <div class="col l12 input-field left list-style-wrapper ordered-list-style">
+                        <span class="col l12 list-style__text-label center-align">Ordered list style</span>
+                        <select class="ordered-list-style__select-list white-text" data-reset-item="list">
+                            <option value="decimal" class="ordered-list-style__option-item">Decimal</option>
+                            <option value="decimal-leading-zero" class="ordered-list-style__option-item">Decimal leading zero</option>
+                            <option value="lower-roman" class="ordered-list-style__option-item">Lower roman</option>
+                            <option value="upper-roman" class="ordered-list-style__option-item">Upper roman</option>
+                            <option value="lower-alpha" class="ordered-list-style__option-item">Lower alpha</option>
+                            <option value="lower-greek" class="ordered-list-style__option-item">Lower greek</option>
+                        </select>
+                    </div>
+                    <!-- Ordered list style panel end -->
+                    <!-- Amount of list elements start -->
+                    <div class="col l12 input-field list-elements-amount-wrapper">
+                        <input placeholder="3" id="list-elements-amount" type="text" data-validate>
+                        <label for="list-elements-amount">List elements amount</label>
+                    </div>
+                    <!-- Amount of list elements end -->
+                    <!-- Create and reset list button start -->
+                    <div class="row creating-list-buttons">
+                        <button type="button" class="col l5 waves-effect waves-light btn-large create-list-btn" name="create-list">Create a list</button>
+                        <button type="reset" class="col l5 offset-l2 waves-effect waves-light btn-large reset-list-btn" name="reset-list" data-reset="list">Reset Parameters</button>
+                    </div>
+                    <!-- Create and reset list button end -->
+                </form>
+            </div>
+            <!-- List adding content panel end -->
+        </div>
+    </div>
+    <!-- Adding panel end -->
+    <!-- Modal window start -->
+    <div class="row modal-window">
+        <!-- Modal window content -->
+        <div class="col l8 offset-l2 modal-window__modal-content">
+            <h5 class="modal-window__lable teal-text text-lighten-2 center-align">
+                Enter the correct password to continue
+            </h5>
+            <div class="input-field col l12">
+                <input id="password" type="password" class="modal-window__password-input">
+                <label for="password" class="modal-window__password-label">Enter the password</label>
+                <span class="error-input-label modal-window__error-label">Incorrect password</span>
+            </div>
+            <div class="row">
+                <button type="button" class="col l4 offset-l4 waves-effect waves-light btn-large modal-window__continue-button" name="continue">
+                    Continue
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Modal window end -->
+
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

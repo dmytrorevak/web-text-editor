@@ -1,0 +1,83 @@
+/*General styles start*/
+
+.showing-text-panel__show-container ul {
+    padding: 40px;
+}
+
+.showing-text-panel__show-container ul li {
+    list-style-type: inherit; 
+}
+
+/*General styles end*/
+
+/*Panels styles start*/
+
+.buttons-panel_style_default {
+    margin-top: 20px;
+}
+
+.buttons-panel__button {
+    width: 100%;
+}
+
+.background-panel__buttton {
+    margin: 10px;
+}
+
+.background-panel__image-panel {
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.font-editing-panel, .background-panel__button-name_image, .background-panel__image-panel, .text-editing-panel, .showing-text-panel, .table-list-creating-panel, .list-adding-panel, .ordered-list-style, .list-style-wrapper, .list-elements-amount-wrapper, .creating-list-buttons, .modal-window__error-label {
+    display: none;
+}
+
+.showing-text-panel__show-container {
+    padding: 15px;
+    border: 1px solid #9e9e9e;
+    background-color: #bdbdbd;
+    overflow: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.showing-text-panel .showing-text-panel__show-container {
+    min-height: 82vh;
+}
+
+.background-panel__load-input {
+    width: 100%;
+}
+
+.choose-list-style {
+    margin-top: 50px;
+}
+
+.error-input-label {
+    color: #F44336;
+}
+
+/*Panels styles end*/
+
+/*Modal window styles start*/
+
+.modal-window {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-window__modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    border: 1px solid #888;
+}
+
+/*Modal window styles end*/
